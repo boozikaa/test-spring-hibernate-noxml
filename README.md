@@ -1,10 +1,11 @@
 test-spring-hibernate-noxml
 ===========================
 
-Prerequisite
-
--- Table: employee
+**Prerequisite**
+~~~~~~~~~~~~~~~~~~~~
+-- Table: employee'
 -- DROP TABLE employee;
+
 CREATE TABLE employee
 (
   id SERIAL  NOT NULL,
@@ -19,3 +20,4 @@ INSERT INTO "employee" ("first_name", "last_name", "email", "phone") VALUES
  ( 'Virat', 'Kohli', 'virat@beingjavaguys.com', '89876787890'),  
  ( 'Sachin', 'Tendulkar', 'sachin@india.com', '89898989898'),  
  ( 'Virendra', 'Sehwag', 'viru@delhi.com', '8976778789');  
+~~~~~~~~~~~~~~~~~~~~
