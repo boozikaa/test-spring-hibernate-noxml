@@ -2,6 +2,14 @@ test-spring-hibernate-noxml
 ===========================
 
 **Prerequisite**
+
+- Spring 4
+
+- Hibernate 4
+
+- Maven 3
+
+- Database: PostgreSQL
 ```sql
 -- Table: employee
 
