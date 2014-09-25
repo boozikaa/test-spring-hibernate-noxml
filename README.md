@@ -1,10 +1,20 @@
 test-spring-hibernate-noxml
 ===========================
 
-Prerequisite
+**Prerequisite**
 
+- Spring 4
+
+- Hibernate 4
+
+- Maven 3
+
+- Database: PostgreSQL
+```sql
 -- Table: employee
+
 -- DROP TABLE employee;
+
 CREATE TABLE employee
 (
   id SERIAL  NOT NULL,
@@ -19,7 +29,7 @@ INSERT INTO "employee" ("first_name", "last_name", "email", "phone") VALUES
  ( 'Virat', 'Kohli', 'virat@beingjavaguys.com', '89876787890'),  
  ( 'Sachin', 'Tendulkar', 'sachin@india.com', '89898989898'),  
  ( 'Virendra', 'Sehwag', 'viru@delhi.com', '8976778789');  
-
+```
 
 - Tomcat 8.0: add DataSource in context.xml
 ```xml
@@ -46,4 +56,4 @@ INSERT INTO "employee" ("first_name", "last_name", "email", "phone") VALUES
 [JNDI Datasource HOW-TO]: http://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html
 
 
-*boozikaa*
+Ref: [spring4-hibernate4-integration]: http://www.beingjavaguys.com/2014/05/spring4-hibernate4-integration.html
