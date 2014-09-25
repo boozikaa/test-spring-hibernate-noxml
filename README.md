@@ -1,6 +1,8 @@
 test-spring-hibernate-noxml
 ===========================
 
+**Reference:** [spring4-hibernate4-integration](http://www.beingjavaguys.com/2014/05/spring4-hibernate4-integration.html)
+
 **Prerequisite**
 
 - Spring 4
@@ -53,7 +55,7 @@ INSERT INTO "employee" ("first_name", "last_name", "email", "phone") VALUES
     minEvictableIdleTimeMillis="1800000"
 /> 
 ``` 
-[JNDI Datasource HOW-TO]: http://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html
+[JNDI Datasource HOW-TO](http://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html)
 
 
-Ref: [spring4-hibernate4-integration]: http://www.beingjavaguys.com/2014/05/spring4-hibernate4-integration.html
+
