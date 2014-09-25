@@ -43,12 +43,14 @@ public class DataAccessConfig {
 					.getProperty("jdbc.driverClassName"));
 			dataSource.setUrl(env.getProperty("jdbc.url"));
 			dataSource.setUsername(env.getProperty("jdbc.user"));
-			dataSource.setPassword(env.getProperty("jdbc.pass"));    
+			dataSource.setPassword(env.getProperty("jdbc.pass"));
+			dataSource.setMaxIdle(30);
+			dataSource.setMaxWaitMillis(10000);
 			dataSource.setValidationQuery("select 1");
 		    dataSource.setTestOnBorrow(true);
 		    dataSource.setTestOnReturn(true);
 		    dataSource.setTestWhileIdle(true);
-		    dataSource.setTimeBetweenEvictionRunsMillis(1800000);
+		    dataSource.setTimeBetweenEvictionRunsMillis(1800000);//30 minute
 		    dataSource.setNumTestsPerEvictionRun(3);
 		    dataSource.setMinEvictableIdleTimeMillis(1800000);
 			return dataSource;
