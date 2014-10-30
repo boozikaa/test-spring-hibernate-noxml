@@ -1,7 +1,6 @@
 package com.boo.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -9,8 +8,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.boo.controller")
-@Import({ DataAccessConfig.class, AppConfig.class })
+@Import({ DataAccessConfig.class })
+//@ComponentScan(basePackages = {"com.boo.model", "com.boo.dao", "com.boo.service", "com.boo.controller"})
 public class WebConfig {
 
 	@Bean

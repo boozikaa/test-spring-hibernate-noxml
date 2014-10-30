@@ -1,4 +1,4 @@
-package com.boo.domain;
+package com.boo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "tb_employee")
 public class Employee {
 
 	@Id
@@ -66,13 +66,9 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("id=").append(this.id).append(",");
-		sb.append("firstName=").append(this.firstName).append(",");
-		sb.append("lastName=").append(this.lastName).append(",");
-		sb.append("phone=").append(this.phone).append(",");
-		sb.append("email=").append(this.email);
-		return sb.toString();
+		return "Employee [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", email=" + email + ", phone="
+				+ phone + ", user=" + "]";
 	}
-	
+
 }

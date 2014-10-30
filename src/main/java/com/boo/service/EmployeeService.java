@@ -2,8 +2,11 @@ package com.boo.service;
 
 import java.util.List;
 
-import com.boo.domain.Employee;
+import org.springframework.stereotype.Component;
 
+import com.boo.model.Employee;
+
+@Component
 public interface EmployeeService {
 	
 	public int insertRow(Employee employee);

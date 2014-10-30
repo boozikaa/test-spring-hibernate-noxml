@@ -3,15 +3,16 @@ package com.boo.dao;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.boo.domain.Employee;
+import com.boo.model.Employee;
 
+@Repository
 public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Autowired
@@ -46,7 +47,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		Employee employee = (Employee) session.load(Employee.class, id);
 		return employee;
 	}
-
+	
+	@Transactional
 	public int updateRow(Employee employee) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
@@ -58,6 +60,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return (Integer) id;
 	}
 
+	@Transactional
 	public int deleteRow(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();

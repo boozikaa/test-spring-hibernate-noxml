@@ -3,10 +3,12 @@ package com.boo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.boo.dao.EmployeeDao;
-import com.boo.domain.Employee;
+import com.boo.model.Employee;
 
+@Service(value = "employeeService")
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired  

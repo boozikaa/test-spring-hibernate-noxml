@@ -2,8 +2,11 @@ package com.boo.dao;
 
 import java.util.List;
 
-import com.boo.domain.Employee;
+import org.springframework.stereotype.Component;
 
+import com.boo.model.Employee;
+
+@Component
 public interface EmployeeDao {
 
 	public int insertRow(Employee employee);

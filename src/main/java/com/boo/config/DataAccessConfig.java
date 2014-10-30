@@ -17,8 +17,6 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.boo.domain.Employee;
-
 @Configuration
 @EnableTransactionManagement
 @PropertySource({ "classpath:persistence-postgresql.properties" })
@@ -47,28 +45,27 @@ public class DataAccessConfig {
 			dataSource.setMaxIdle(30);
 			dataSource.setMaxWaitMillis(10000);
 			dataSource.setValidationQuery("select 1");
-		    dataSource.setTestOnBorrow(true);
-		    dataSource.setTestOnReturn(true);
-		    dataSource.setTestWhileIdle(true);
-		    dataSource.setTimeBetweenEvictionRunsMillis(1800000);//30 minute
-		    dataSource.setNumTestsPerEvictionRun(3);
-		    dataSource.setMinEvictableIdleTimeMillis(1800000);
+			dataSource.setTestOnBorrow(true);
+			dataSource.setTestOnReturn(true);
+			dataSource.setTestWhileIdle(true);
+			dataSource.setTimeBetweenEvictionRunsMillis(1800000);// 30 minute
+			dataSource.setNumTestsPerEvictionRun(3);
+			dataSource.setMinEvictableIdleTimeMillis(1800000);
 			return dataSource;
 		}
 	}
 
 	final Properties hibernateProperties() {
 		final Properties hibernateProperties = new Properties();
-		/*
-		 * hibernateProperties.setProperty("hibernate.hbm2ddl.auto",
-		 * env.getProperty("hibernate.hbm2ddl.auto"));
-		 */
+
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto",
+				env.getProperty("hibernate.hbm2ddl.auto"));
+
 		hibernateProperties.setProperty("hibernate.dialect",
 				env.getProperty("hibernate.dialect"));
 
 		hibernateProperties.setProperty("hibernate.show_sql",
 				env.getProperty("hibernate.show_sql"));
-
 
 		return hibernateProperties;
 	}
@@ -78,7 +75,8 @@ public class DataAccessConfig {
 		final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
 		sessionFactory.setPackagesToScan(new String[] { "com.boo.model" });
-		sessionFactory.setAnnotatedClasses(new Class[] { Employee.class });// new
+		
+		//sessionFactory.setAnnotatedClasses(new Class[] { Employee.class });// new
 																			// row!!!
 		sessionFactory.setHibernateProperties(hibernateProperties());
 
